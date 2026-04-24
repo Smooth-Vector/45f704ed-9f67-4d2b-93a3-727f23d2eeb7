@@ -913,7 +913,7 @@
   function closeModalOnOverlay(e) { if (e.target.id === 'modal') closeModal(); }
 
   // SUBMISSION CONFIRMATION
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const p = new URLSearchParams(window.location.search).get('submitted');
     if (!p) return;
     const msg = p === 'quote'
@@ -922,7 +922,7 @@
     document.getElementById('success-msg').textContent = msg;
     document.getElementById('success-modal').classList.add('open');
     history.replaceState(null, '', window.location.pathname + '#contact');
-  })();
+  });
 
   function closeSuccessModal() {
     document.getElementById('success-modal').classList.remove('open');
