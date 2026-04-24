@@ -477,6 +477,19 @@
       .gal-item:nth-child(7) { grid-column: span 6; }
     }
 
+    /* ── TOAST ── */
+    .toast {
+      position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(6rem);
+      background: var(--warm-dark); color: var(--warm-white);
+      padding: 1rem 2rem; z-index: 2000;
+      font-size: 0.85rem; letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.75rem;
+      transition: transform 0.4s ease, opacity 0.4s ease; opacity: 0;
+      white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    .toast-check { color: var(--pink-mid); font-size: 1.1rem; }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -737,10 +750,10 @@
         <button class="tab-btn" onclick="switchTab('callback-inline')">Request Callback</button>
       </div>
       <div class="tab-panel active" id="tab-quote-inline">
-        <form action="https://formsubmit.co/contact@hertrowel.com" method="POST">
+        <form action="https://formsubmit.co/4cae90c451ba26e5158f491176bd6ece" method="POST">
           <input type="hidden" name="_subject" value="Quote Request — Her Trowel">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://hertrowel.com/#contact">
+          <input type="hidden" name="_next" value="https://hertrowel.com/?submitted=quote#contact">
           <input type="text" name="_honey" style="display:none">
           <div class="form-row">
             <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
@@ -764,10 +777,10 @@
         </form>
       </div>
       <div class="tab-panel" id="tab-callback-inline">
-        <form action="https://formsubmit.co/contact@hertrowel.com" method="POST">
+        <form action="https://formsubmit.co/4cae90c451ba26e5158f491176bd6ece" method="POST">
           <input type="hidden" name="_subject" value="Callback Request — Her Trowel">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://hertrowel.com/#contact">
+          <input type="hidden" name="_next" value="https://hertrowel.com/?submitted=callback#contact">
           <input type="text" name="_honey" style="display:none">
           <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required></div>
           <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07XXX XXX XXX" required></div>
@@ -826,10 +839,10 @@
     <h3 id="modal-title">Book a Quote</h3>
     <p class="modal-sub" id="modal-sub">Fill in your details and I'll get back to you within 24 hours.</p>
     <div id="modal-quote">
-      <form action="https://formsubmit.co/contact@hertrowel.com" method="POST">
+      <form action="https://formsubmit.co/4cae90c451ba26e5158f491176bd6ece" method="POST">
         <input type="hidden" name="_subject" value="Quote Request — Her Trowel">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://hertrowel.com/#contact">
+        <input type="hidden" name="_next" value="https://hertrowel.com/?submitted=quote#contact">
         <input type="text" name="_honey" style="display:none">
         <div class="form-row">
           <div class="form-group"><label>First Name</label><input type="text" name="first_name" required></div>
@@ -851,10 +864,10 @@
       </form>
     </div>
     <div id="modal-callback" style="display:none">
-      <form action="https://formsubmit.co/contact@hertrowel.com" method="POST">
+      <form action="https://formsubmit.co/4cae90c451ba26e5158f491176bd6ece" method="POST">
         <input type="hidden" name="_subject" value="Callback Request — Her Trowel">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://hertrowel.com/#contact">
+        <input type="hidden" name="_next" value="https://hertrowel.com/?submitted=callback#contact">
         <input type="text" name="_honey" style="display:none">
         <div class="form-group"><label>Your Name</label><input type="text" name="name" required></div>
         <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" required></div>
@@ -911,6 +924,25 @@
   }
   function closeModal() { document.getElementById('modal').classList.remove('open'); }
   function closeModalOnOverlay(e) { if (e.target.id === 'modal') closeModal(); }
+
+  // SUBMISSION TOAST
+  (function () {
+    const p = new URLSearchParams(window.location.search).get('submitted');
+    if (!p) return;
+    const msg = p === 'quote'
+      ? 'Quote request sent — I\'ll be in touch within 24 hours.'
+      : 'Callback request sent — I\'ll call you back as soon as possible.';
+    const toast = document.getElementById('toast');
+    toast.querySelector('.toast-msg').textContent = msg;
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => toast.classList.remove('show'), 6000);
+    history.replaceState(null, '', window.location.pathname + '#contact');
+  })();
 </script>
+
+<div class="toast" id="toast" role="alert">
+  <span class="toast-check">✓</span>
+  <span class="toast-msg"></span>
+</div>
 </body>
 </html>
