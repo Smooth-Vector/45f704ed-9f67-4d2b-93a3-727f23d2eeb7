@@ -477,19 +477,6 @@
       .gal-item:nth-child(7) { grid-column: span 6; }
     }
 
-    /* ── TOAST ── */
-    .toast {
-      position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(6rem);
-      background: var(--warm-dark); color: var(--warm-white);
-      padding: 1rem 2rem; z-index: 2000;
-      font-size: 0.85rem; letter-spacing: 0.05em;
-      display: flex; align-items: center; gap: 0.75rem;
-      transition: transform 0.4s ease, opacity 0.4s ease; opacity: 0;
-      white-space: nowrap;
-    }
-    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-    .toast-check { color: var(--pink-mid); font-size: 1.1rem; }
-
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -925,24 +912,30 @@
   function closeModal() { document.getElementById('modal').classList.remove('open'); }
   function closeModalOnOverlay(e) { if (e.target.id === 'modal') closeModal(); }
 
-  // SUBMISSION TOAST
+  // SUBMISSION CONFIRMATION
   (function () {
     const p = new URLSearchParams(window.location.search).get('submitted');
     if (!p) return;
     const msg = p === 'quote'
-      ? 'Quote request sent — I\'ll be in touch within 24 hours.'
-      : 'Callback request sent — I\'ll call you back as soon as possible.';
-    const toast = document.getElementById('toast');
-    toast.querySelector('.toast-msg').textContent = msg;
-    requestAnimationFrame(() => toast.classList.add('show'));
-    setTimeout(() => toast.classList.remove('show'), 6000);
+      ? 'Your quote request has been received. I\'ll be in touch within 24 hours.'
+      : 'Your callback request has been received. I\'ll call you back as soon as possible.';
+    document.getElementById('success-msg').textContent = msg;
+    document.getElementById('success-modal').classList.add('open');
     history.replaceState(null, '', window.location.pathname + '#contact');
   })();
+
+  function closeSuccessModal() {
+    document.getElementById('success-modal').classList.remove('open');
+  }
 </script>
 
-<div class="toast" id="toast" role="alert">
-  <span class="toast-check">✓</span>
-  <span class="toast-msg"></span>
+<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
+  <div class="modal" style="text-align:center; max-width:420px;">
+    <div style="font-size:2.5rem; color:var(--pink-accent); margin-bottom:1rem;">✓</div>
+    <h3>Message Received</h3>
+    <p class="modal-sub" id="success-msg" style="margin-top:0.5rem;"></p>
+    <button class="form-submit" onclick="closeSuccessModal()" style="margin-top:1.5rem;">Okay</button>
+  </div>
 </div>
 </body>
 </html>
