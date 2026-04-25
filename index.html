@@ -57,9 +57,7 @@
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <div class="hero-placeholder">
-        <div class="hero-placeholder-label">Hero image — plasterer at work<br>or a beautiful finished room</div>
-      </div>
+      <img src="assets/images/hero.webp" alt="Plasterer" class="hero-img">
     </div>
     <div class="hero-badge">
       <div class="b1">Est. 2019</div>
@@ -88,7 +86,7 @@
   <div class="about-grid">
     <div class="about-img-wrap">
       <div class="about-placeholder">
-        <div class="about-placeholder-label">Portrait photo<br>of the plasterer</div>
+        <img src="assets/images/working.webp" alt="Plasterer at work" class="about-image">
       </div>
       <div class="about-accent-block"></div>
     </div>
@@ -135,23 +133,23 @@
     </p>
   </div>
   <div class="gallery-grid">
-    <div class="gal-item" data-label="Full room skim — Hadleigh">
-      <div class="gal-placeholder-label">Full room skim<br>finished photo</div>
+    <div class="gal-item" data-label="Full Room Skim — Hadleigh" onclick="openLightbox('assets/images/after-alpha.webp', 'Full Room Skim — Hadleigh')">
+      <img class="gal-img" src="assets/images/after-alpha.webp" alt="Full room skim with smooth terracotta walls and wood floor">
     </div>
-    <div class="gal-item" data-label="New build — ceiling work">
-      <div class="gal-placeholder-label">New build<br>ceiling photo</div>
+    <div class="gal-item" data-label="Window Reveal Plastering" onclick="openLightbox('assets/images/afer-beta.webp', 'Window Reveal Plastering')">
+      <img class="gal-img" src="assets/images/afer-beta.webp" alt="Plastered window reveal in a timber-framed property">
     </div>
-    <div class="gal-item" data-label="Stairwell plastering">
-      <div class="gal-placeholder-label">Stairwell<br>plaster finish</div>
+    <div class="gal-item" data-label="Commercial Skim Finish" onclick="openLightbox('assets/images/after-charlie.webp', 'Commercial Skim Finish')">
+      <img class="gal-img" src="assets/images/after-charlie.webp" alt="Large room with smooth cream plaster finish">
     </div>
-    <div class="gal-item" data-label="Bathroom patch repair">
-      <div class="gal-placeholder-label">Bathroom<br>repair photo</div>
+    <div class="gal-item" data-label="Fireplace Surround" onclick="openLightbox('assets/images/after-delta.webp', 'Fireplace Surround')">
+      <img class="gal-img" src="assets/images/after-delta.webp" alt="Freshly plastered fireplace surround">
     </div>
-    <div class="gal-item" data-label="Artex removal & skim">
-      <div class="gal-placeholder-label">Artex removal<br>before &amp; after</div>
+    <div class="gal-item" data-label="Ceiling Renovation" onclick="openLightbox('assets/images/after-echo.webp', 'Ceiling Renovation')">
+      <img class="gal-img" src="assets/images/after-echo.webp" alt="Ceiling and wall plastering in progress">
     </div>
-    <div class="gal-item" data-label="Victorian property renovation">
-      <div class="gal-placeholder-label">Renovation<br>project photo</div>
+    <div class="gal-item" data-label="Fresh Skim — Room Corner" onclick="openLightbox('assets/images/after-golf.webp', 'Fresh Skim — Room Corner')">
+      <img class="gal-img" src="assets/images/after-golf.webp" alt="Freshly skimmed room corner with smooth brown plaster">
     </div>
   </div>
 </section>
@@ -251,59 +249,6 @@
         <a class="btn-outline" href="mailto:contact@hertrowel.com">Send an Email</a>
       </div>
     </div>
-    <div>
-      <div class="tab-btns">
-        <button class="tab-btn active" onclick="switchTab('quote-inline')">Book a Quote</button>
-        <button class="tab-btn" onclick="switchTab('callback-inline')">Request Callback</button>
-      </div>
-      <div class="tab-panel active" id="tab-quote-inline">
-        <form action="https://formsubmit.co/4cae90c451ba26e5158f491176bd6ece" method="POST">
-          <input type="hidden" name="_subject" value="Quote Request — Her Trowel">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://hertrowel.com/?submitted=quote#contact">
-          <input type="text" name="_honey" style="display:none">
-          <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
-            <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
-          </div>
-          <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="07XXX XXX XXX" required></div>
-          <div class="form-group"><label>Email</label><input type="email" name="_replyto" placeholder="jane@example.com"></div>
-          <div class="form-group">
-            <label>Type of Work</label>
-            <select name="service">
-              <option value="">Select a service…</option>
-              <option>Skim Plastering</option>
-              <option>Patch Repairs</option>
-              <option>Artex Removal</option>
-              <option>New Build / Renovation</option>
-              <option>Not Sure — Happy to Discuss</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Tell me a bit about the job</label><textarea name="message" placeholder="e.g. Two bedroom ceilings and one wall, Suffolk village…"></textarea></div>
-          <button type="submit" class="form-submit">Send Quote Request</button>
-        </form>
-      </div>
-      <div class="tab-panel" id="tab-callback-inline">
-        <form action="https://formsubmit.co/4cae90c451ba26e5158f491176bd6ece" method="POST">
-          <input type="hidden" name="_subject" value="Callback Request — Her Trowel">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://hertrowel.com/?submitted=callback#contact">
-          <input type="text" name="_honey" style="display:none">
-          <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07XXX XXX XXX" required></div>
-          <div class="form-group">
-            <label>Best Time to Call</label>
-            <select name="best_time">
-              <option>Morning (8am – 12pm)</option>
-              <option>Afternoon (12pm – 5pm)</option>
-              <option>Any time</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Any notes? (optional)</label><textarea name="message" placeholder="Brief description of what you need…"></textarea></div>
-          <button type="submit" class="form-submit">Request Callback</button>
-        </form>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -386,6 +331,15 @@
         <button type="submit" class="form-submit">Request Callback</button>
       </form>
     </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
 </div>
 

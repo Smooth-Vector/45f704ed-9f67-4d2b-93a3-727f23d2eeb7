@@ -13,14 +13,6 @@ function setTestimonial(i) {
 let tIdx = 0;
 setInterval(() => { tIdx = (tIdx + 1) % 3; setTestimonial(tIdx); }, 5000);
 
-// TABS (inline contact)
-function switchTab(id) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  event.target.classList.add('active');
-}
-
 // MODAL
 function openModal(type) {
   document.getElementById('modal').classList.add('open');
@@ -55,3 +47,19 @@ document.addEventListener('DOMContentLoaded', function () {
 function closeSuccessModal() {
   document.getElementById('success-modal').classList.remove('open');
 }
+
+// LIGHTBOX
+function openLightbox(src, caption) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = caption;
+  document.getElementById('lightbox-caption').textContent = caption;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeLightbox();
+});
