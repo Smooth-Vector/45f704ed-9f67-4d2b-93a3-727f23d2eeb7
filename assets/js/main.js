@@ -63,3 +63,17 @@ function closeLightbox() {
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeLightbox();
 });
+
+// MOBILE NAV
+function toggleNav() {
+  const links = document.querySelector('.nav-links');
+  const btn = document.querySelector('.nav-toggle');
+  const open = links.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+    document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
+  });
+});
