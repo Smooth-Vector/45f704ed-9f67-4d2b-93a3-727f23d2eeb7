@@ -41,7 +41,6 @@
     </p>
     <div class="hero-actions fade-up">
       <a class="btn-primary" href="#contact" onclick="openModal('quote')">Book a Quote</a>
-      <a class="btn-outline" href="#contact" onclick="openModal('callback')">Request a Callback</a>
     </div>
     <div class="hero-stats">
       <div>
@@ -95,15 +94,15 @@
     </div>
     <div>
       <div class="about-name">Jessica Shrimpton</div>
-      <div class="about-title">Founder & Lead Plasterer</div>
+      <div class="about-title">Founder & Plasterer</div>
       <p class="about-text">
         I started Her Trowel after years of refining my skills on projects across Suffolk. 
         Plastering is something I genuinely love — the transformation of a rough wall into a 
         perfectly smooth, paint-ready finish is incredibly satisfying.
       </p>
       <p class="about-text">
-        Based right here in Hadleigh, I work with local homeowners, developers and tradespeople 
-        to deliver high-quality results at honest prices. No rushing, no cutting corners — 
+        Based right here in Hadleigh, I work with local homeowners and tradespeople
+        to deliver high-quality results at honest prices. No rushing, no cutting corners —
         just excellent, careful work that I'm proud to put my name to.
       </p>
       <div class="about-detail">
@@ -136,23 +135,23 @@
     </p>
   </div>
   <div class="gallery-grid">
-    <div class="gal-item" data-label="Full Room Skim — Hadleigh" onclick="openLightbox('assets/images/after-alpha.webp', 'Full Room Skim — Hadleigh')">
-      <img class="gal-img" src="assets/images/after-alpha.webp" alt="Full room skim with smooth terracotta walls and wood floor">
+    <div class="gal-item" data-label="Lime plaster" onclick="openLightbox('assets/images/after-alpha.webp', 'Lime plaster')">
+      <img class="gal-img" src="assets/images/after-alpha.webp" alt="Lime plaster finish">
     </div>
-    <div class="gal-item" data-label="Window Reveal Plastering" onclick="openLightbox('assets/images/afer-beta.webp', 'Window Reveal Plastering')">
-      <img class="gal-img" src="assets/images/afer-beta.webp" alt="Plastered window reveal in a timber-framed property">
+    <div class="gal-item" data-label="Savolit board + Lime Plaster" onclick="openLightbox('assets/images/afer-beta.webp', 'Savolit board + Lime Plaster')">
+      <img class="gal-img" src="assets/images/afer-beta.webp" alt="Savolit board with lime plaster on a window reveal">
     </div>
-    <div class="gal-item" data-label="Commercial Skim Finish" onclick="openLightbox('assets/images/after-charlie.webp', 'Commercial Skim Finish')">
-      <img class="gal-img" src="assets/images/after-charlie.webp" alt="Large room with smooth cream plaster finish">
+    <div class="gal-item" data-label="Replaced Lime plaster over on Brickwork" onclick="openLightbox('assets/images/after-charlie.webp', 'Repaired Lime plaster over on Brickwork')">
+      <img class="gal-img" src="assets/images/after-charlie.webp" alt="Repaired lime plaster over brickwork">
     </div>
-    <div class="gal-item" data-label="Fireplace Surround" onclick="openLightbox('assets/images/after-delta.webp', 'Fireplace Surround')">
-      <img class="gal-img" src="assets/images/after-delta.webp" alt="Freshly plastered fireplace surround">
+    <div class="gal-item" data-label="Lime Plaster" onclick="openLightbox('assets/images/after-delta.webp', 'Lime plaster')">
+      <img class="gal-img" src="assets/images/after-delta.webp" alt="Lime plaster on a fireplace">
     </div>
-    <div class="gal-item" data-label="Ceiling Renovation" onclick="openLightbox('assets/images/after-echo.webp', 'Ceiling Renovation')">
-      <img class="gal-img" src="assets/images/after-echo.webp" alt="Ceiling and wall plastering in progress">
+    <div class="gal-item" data-label="Overskim" onclick="openLightbox('assets/images/after-echo.webp', 'Overskim')">
+      <img class="gal-img" src="assets/images/after-echo.webp" alt="Overskim on a ceiling">
     </div>
-    <div class="gal-item" data-label="Fresh Skim — Room Corner" onclick="openLightbox('assets/images/after-golf.webp', 'Fresh Skim — Room Corner')">
-      <img class="gal-img" src="assets/images/after-golf.webp" alt="Freshly skimmed room corner with smooth brown plaster">
+    <div class="gal-item" data-label="Gypsum plaster" onclick="openLightbox('assets/images/after-golf.webp', 'Gypsum plaster')">
+      <img class="gal-img" src="assets/images/after-golf.webp" alt="Gypsum plaster on a room corner">
     </div>
   </div>
 </section>
@@ -186,18 +185,6 @@
     <div class="service-card">
       <div class="service-icon">
         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="2" y="2" width="7" height="7"/>
-          <rect x="11" y="2" width="7" height="7"/>
-          <rect x="2" y="11" width="7" height="7"/>
-          <rect x="11" y="11" width="7" height="7"/>
-        </svg>
-      </div>
-      <div class="service-title">Artex Removal</div>
-      <p class="service-desc">Careful removal of old textured ceilings and walls, skimmed flat and ready for modern decorating.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M2 18 L10 4 L18 18"/>
           <line x1="6" y1="14" x2="14" y2="14"/>
           <line x1="10" y1="4" x2="10" y2="18"/>
@@ -206,17 +193,24 @@
       <div class="service-title">New Build & Renovation</div>
       <p class="service-desc">Full plastering packages for new builds and whole-house renovations, working alongside other trades.</p>
     </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 17 Q4 8 10 8 Q16 8 16 17"/>
+          <line x1="3" y1="17" x2="17" y2="17"/>
+          <line x1="7" y1="11" x2="13" y2="11"/>
+        </svg>
+      </div>
+      <div class="service-title">Lime Plastering</div>
+      <p class="service-desc">Traditional lime plaster for breathable, period-appropriate finishes — ideal for older properties and natural materials.</p>
+    </div>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<div class="testimonial-section">
-  <blockquote id="testimonial-text">
-    "Absolutely brilliant — our living room walls are perfectly smooth. 
-    She was tidy, professional and clearly passionate about her work. 
-    Would recommend Her Trowel to anyone."
-  </blockquote>
-  <cite id="testimonial-author">— Sarah T., Hadleigh</cite>
+<!-- TESTIMONIAL (hidden for now) -->
+<div class="testimonial-section" style="display:none">
+  <blockquote id="testimonial-text"></blockquote>
+  <cite id="testimonial-author"></cite>
   <div class="testimonial-dots">
     <span class="active" onclick="setTestimonial(0)"></span>
     <span onclick="setTestimonial(1)"></span>
@@ -236,20 +230,15 @@
       </div>
       <div class="contact-detail">
         <span class="label">Phone</span>
-        <span class="value"><a href="tel:+441234567890">07XXX XXX XXX</a></span>
+        <span class="value"><a href="tel:+441473396174">01473 396 174</a></span>
       </div>
       <div class="contact-detail">
         <span class="label">Email</span>
-        <span class="value"><a href="mailto:contact@hertrowel.com">contact@hertrowel.com</a></span>
-      </div>
-      <div class="contact-detail">
-        <span class="label">Hours</span>
-        <span class="value">Mon – Fri: 7:30am – 5:30pm<br>Saturday by arrangement</span>
+        <span class="value"><a href="mailto:Jessica@hertrowel.com">Jessica@hertrowel.com</a></span>
       </div>
       <div class="contact-actions">
         <a class="btn-primary" href="#" onclick="openModal('quote'); return false;">Book a Quote</a>
-        <a class="btn-outline" href="#" onclick="openModal('callback'); return false;">Request a Callback</a>
-        <a class="btn-outline" href="mailto:contact@hertrowel.com">Send an Email</a>
+        <a class="btn-outline" href="mailto:Jessica@hertrowel.com">Send an Email</a>
       </div>
     </div>
   </div>
@@ -275,9 +264,9 @@
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
         <li><a href="#services">Skim Plastering</a></li>
-
         <li><a href="#services">Patch Repairs</a></li>
-        <li><a href="#services">Artex Removal</a></li>
+        <li><a href="#services">Lime Plastering</a></li>
+        <li><a href="#services">Old & Listed Buildings</a></li>
       </ul>
     </div>
   </div>
@@ -287,7 +276,7 @@
   </div>
 </footer>
 
-<!-- MODAL (Book a Quote / Callback) -->
+<!-- MODAL (Book a Quote) -->
 <div class="modal-overlay" id="modal" onclick="closeModalOnOverlay(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
@@ -305,33 +294,9 @@
         </div>
         <div class="form-group"><label>Phone</label><input type="tel" name="phone" required></div>
         <div class="form-group"><label>Email</label><input type="email" name="_replyto"></div>
-        <div class="form-group">
-          <label>Type of Work</label>
-          <select name="service">
-            <option value="">Select a service…</option>
-            <option>Skim Plastering</option><option>Patch Repairs</option>
-            <option>Artex Removal</option><option>New Build / Renovation</option>
-            <option>Not Sure — Happy to Discuss</option>
-          </select>
-        </div>
+        <div class="form-group"><label>Postcode</label><input type="text" name="postcode" required></div>
         <div class="form-group"><label>Tell me about the job</label><textarea name="message"></textarea></div>
         <button type="submit" class="form-submit">Send Quote Request</button>
-      </form>
-    </div>
-    <div id="modal-callback" style="display:none">
-      <form action="https://formsubmit.co/4cae90c451ba26e5158f491176bd6ece" method="POST">
-        <input type="hidden" name="_subject" value="Callback Request — Her Trowel">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://hertrowel.com/?submitted=callback#contact">
-        <input type="text" name="_honey" style="display:none">
-        <div class="form-group"><label>Your Name</label><input type="text" name="name" required></div>
-        <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" required></div>
-        <div class="form-group">
-          <label>Best Time to Call</label>
-          <select name="best_time"><option>Morning (8am–12pm)</option><option>Afternoon (12–5pm)</option><option>Any time</option></select>
-        </div>
-        <div class="form-group"><label>Notes (optional)</label><textarea name="message"></textarea></div>
-        <button type="submit" class="form-submit">Request Callback</button>
       </form>
     </div>
   </div>
